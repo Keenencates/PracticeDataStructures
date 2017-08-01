@@ -4,9 +4,11 @@ This repository is my collection of data structures that I have implemented in p
 Current Data Structures
 ----------------------------
 
-+ linked lists
++ singly linked lists
 	+ followed the implementation on pseudomuto.com
 	+ learned how to code generics into C
+	+ Potential to add doubly linked lists
+	+ Potential to add circular lists
 
 
 Upcoming Data Structures
