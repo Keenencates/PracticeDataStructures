@@ -1,0 +1,4 @@
+#!/bin/bash
+cd src
+make
+valgrind --leak-check=full -v ./list_test
