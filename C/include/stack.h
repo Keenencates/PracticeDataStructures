@@ -4,7 +4,7 @@
 #include "list.h"
 
 typedef struct {
-	list* list;
+	list list;
 } stack;
 
 void stack_new(stack* stack, int element_size, free_function free_func);

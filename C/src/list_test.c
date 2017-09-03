@@ -35,7 +35,10 @@ void int_list(){
 	int result = 0;
 	find_mth_last(&list, &result, 3);
         printf("The 3rd to last number in the list is: %d\n", result);
-	
+
+	list_head(&list, &result, FALSE);
+	printf("The head of the list is: %d\n", result);
+
 	list_destroy(&list);
 	printf("Successfully freed %d numbers...\n", nums);
 }
