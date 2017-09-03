@@ -18,6 +18,7 @@ void pop(stack* stack, void* element){
 
 void push(stack* stack, void* element){
 	list_prepend(stack->list, &element);
+	printf("stack: was able to push\n");
 }
 
 void stack_destroy(stack* stack){
