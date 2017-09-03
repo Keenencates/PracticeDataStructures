@@ -10,6 +10,7 @@ void string_list();
 bool iterate_int(void* data);
 bool iterate_string(void* data);
 void free_string(void* data);
+void find_mth_last(list* list, void* element, int m);
 
 int main(int argc, char* argv[]){
 	int_list();
@@ -31,6 +32,10 @@ void int_list(){
 
 	list_for_each(&list, iterate_int);
 
+	int result = 0;
+	find_mth_last(&list, &result, 3);
+        printf("The 3rd to last number in the list is: %d\n", result);
+	
 	list_destroy(&list);
 	printf("Successfully freed %d numbers...\n", nums);
 }
@@ -68,3 +73,19 @@ bool iterate_string(void* data){
 void free_string(void* data){
 	free(*(char **)data);
 }
+
+void find_mth_last(list* list, void* element, int m){
+	list_node* mth_ptr = list->head;
+	list_node* curr = list->head;
+	int cnt = 0;
+	while(curr->next != NULL){
+		if(cnt < m){
+			cnt++;
+		}else{
+			mth_ptr = mth_ptr->next;
+		}
+		curr = curr->next;
+	}
+	memcpy(element, mth_ptr->data, list->element_size);
+}
+
