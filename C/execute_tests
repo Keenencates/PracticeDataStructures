@@ -1,5 +1,6 @@
 #!/bin/bash
 cd src
+make clean
 make
 valgrind --leak-check=full -v ./list_test
 valgrind --leak-check=full -v ./stack_test
