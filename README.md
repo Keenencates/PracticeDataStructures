@@ -19,4 +19,3 @@ Upcoming Data Structures
 ----------------------------
 
 * hash tables (using linked lists)
-* doubly linked lists
