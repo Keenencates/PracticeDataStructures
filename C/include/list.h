@@ -10,6 +10,7 @@ typedef bool (*list_iterator)(void *);
 typedef struct _list_node{
 	void *data;
 	struct _list_node *next;
+	struct _list_node *prev;
 } list_node;
 
 typedef struct {

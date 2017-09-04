@@ -34,18 +34,20 @@ void list_prepend(list* list, void* element){
 	memcpy(node->data, element, list->element_size);
 
 	node->next = list->head;
+	node->prev = NULL;
 	list->head = node;
+	list->head->next->prev = list->head;
 
 	if(!list->tail){
 		list->tail = list->head;
 	}
 	list->logical_length++;
 }
-
 void list_append(list* list, void* element){
 	list_node* node = malloc(sizeof(list_node));
 	node->data = malloc(list->element_size);
 	node->next = NULL;
+	node->prev = NULL;
 
 	memcpy(node->data, element, list->element_size);
 
@@ -53,7 +55,9 @@ void list_append(list* list, void* element){
 		list->head = list->tail = node;
 	} else {
 		list->tail->next = node;
+		list_node* temp = list->tail;
 		list->tail = node;
+		list->tail->prev = temp;
 	}
 	list->logical_length++;
 }
