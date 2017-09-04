@@ -10,6 +10,7 @@ Current Data Structures
 	+ learned how to code generics into C
 	+ Potential to add doubly linked lists
 	+ Potential to add circular lists
++ doubly linked lists
 + stacks
 
 
